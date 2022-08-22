@@ -188,3 +188,29 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+main.mt-5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main.mt-5 img {
+  width: 50%;
+}
+
+main .container-form {
+  display: flex;
+  justify-content: center;
+}
+.container-form form input {
+  display: block;
+  margin-bottom: 8px;
+}
+.container-form label {
+  display: block;
+}
+
+.container-form .input-invalido {
+  color: #f02;
+  font-size: 12px;
+}
