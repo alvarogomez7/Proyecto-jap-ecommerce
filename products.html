@@ -31,12 +31,30 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="my-profile.html" id="link-usuario"></a>
+            <ul class="menu-desplegable">
+              <li><a href="my-profile.html">Mi perfil</a></li>
+              <li><a href="cart.html">Mi carrito</a></li>
+              <li><a id="cerrar-sesion" href="login.html">Cerrar sesión</a></li>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main class="pb-5 container">
+    <div class="container container-filter-sort">
+      <div class="container-sort">
+        <button id="precio-descendente">$↑ a $↓</button>
+        <button id="precio-ascendente">$↓ a $↑</button>
+        <button id="mas-vendidos">↑↓ Mas vendidos</button>
+      </div>
+      <label>
+        Filtrar por precio
+        <input type="number" name="" id="precio-min" placeholder="Precio minimo">
+        <input type="number" name="" id="precio-max" placeholder="Precio maximo">
+      </label>
+      <button id="filtrar">Filtrar</button>
+    </div>
     <div class="container" id="container-products">
     </div>
   </main>

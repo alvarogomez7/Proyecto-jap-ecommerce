@@ -1,8 +1,8 @@
 
-const SUBMIT_BUTTON = document.getElementById('send-form');
+//const SUBMIT_BUTTON = document.getElementById('send-form');
 
 
-SUBMIT_BUTTON.addEventListener('click', (e)=> {
+document.getElementById('login-form').addEventListener('submit', (e)=> {
    e.preventDefault();
    let user_input = document.getElementById('user').value.length > 0;
    let password_input = document.getElementById('password').value.length > 0;
@@ -19,8 +19,10 @@ SUBMIT_BUTTON.addEventListener('click', (e)=> {
     }
 
     if(user_input && password_input){
+        let usuario = document.getElementById('user').value;
+        localStorage.setItem('usuario', usuario);
         window.location.href = 'index2.html';
     }
-})
+});
 
 

@@ -6,6 +6,9 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
+let miUsuario = document.getElementById('link-usuario');
+let cerrarSesion = document.getElementById('cerrar-sesion');
+
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -38,5 +41,16 @@ let getJSONData = function(url){
         hideSpinner();
         return result;
     });
+}
+
+miUsuario.textContent = localStorage.getItem('usuario');
+
+cerrarSesion.addEventListener('click', ()=>{
+  miUsuario = localStorage.removeItem('usuario');
+})
+
+function setProductID(id){
+  localStorage.setItem('productID', id);
+  window.location.href = "product-info.html";
 }
 

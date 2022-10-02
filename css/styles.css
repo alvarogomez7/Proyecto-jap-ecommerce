@@ -12,7 +12,24 @@
 nav a {
   text-decoration: none;
 }
-
+nav .menu-desplegable {
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 200px;
+  background-color: #414242;
+}
+nav li:hover .menu-desplegable {
+  display: block;
+}
+.menu-desplegable li:hover{
+  background-color: #212529;
+}
+.menu-desplegable li a {
+  display: block;
+  padding: 15px 15px 15px 20px;
+  color: #fff;
+}
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -179,6 +196,30 @@ main {
   min-height: calc(100vh - 210px);
 }
 
+main .container-filter-sort {
+  display: flex;
+  justify-content: end;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+main .container-sort {
+  margin-right: 20px;
+}
+
+span.no-filtrado {
+  color: #f72828;
+}
+
+span.no-filtrado:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.container-filter-sort input{
+  margin: 0 10px;
+}
+
 a.custom-card,
 a.custom-card:hover {
   color: inherit;
@@ -213,4 +254,16 @@ main .container-form {
 .container-form .input-invalido {
   color: #f02;
   font-size: 12px;
+}
+
+.container .img-producto{
+  width: 30%;
+  margin: 10px;
+}
+
+.form-comment {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 20px;
 }
