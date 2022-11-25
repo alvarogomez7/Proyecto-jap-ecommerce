@@ -267,3 +267,11 @@ main .container-form {
   width: 400px;
   margin-left: 20px;
 }
+
+main table .input-cantidad {
+  width: 60px;
+}
+
+.img-perfil {
+  width: 10%;
+}

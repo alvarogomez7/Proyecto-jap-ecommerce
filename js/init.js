@@ -10,6 +10,7 @@ let miUsuario = document.getElementById('link-usuario');
 let cerrarSesion = document.getElementById('cerrar-sesion');
 
 
+
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
@@ -47,6 +48,8 @@ miUsuario.textContent = localStorage.getItem('usuario');
 
 cerrarSesion.addEventListener('click', ()=>{
   miUsuario = localStorage.removeItem('usuario');
+  localStorage.removeItem('datosUsuario');
+
 })
 
 function setProductID(id){

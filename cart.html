@@ -43,9 +43,202 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <table class="table table-striped" id="table-cart">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="col-9 col-lg-3" id="table-img"></th>
+            <td class="table-item" id="table-name"></td>
+            <td class="table-item" id="table-cost"></td>
+            <td class="table-item" class="col-9 col-lg-3"><input class="col-9 col-lg-3" type="number" id="table-input" min="1"></td>
+            <td class="table-item"><span class="tipo-de-moneda"></span><span id="table-subtotal"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      </table>
+      <form class="form-check" id="formulario-radio">
+          <h2>Tipo de envío</h2>
+        <input class="form-check-input" type="radio" name="envio" id="radio-1" value="0.15" checked>
+        <label class="form-check-label" for="radio-1">
+          Premium 2 a 5 días (<b>15%</b>)
+        </label>
+        <br>
+        
+        <input class="form-check-input" type="radio" name="envio" id="radio-2" value="0.07">
+        <label class="form-check-label" for="radio-2">
+          Express 5 a 8 días (<b>7%</b>) 
+        </label>
+        <br>
+        <input class="form-check-input" type="radio" name="envio" id="radio-3" value="0.05">
+        <label class="form-check-label" for="radio-3">
+          Standard 12 a 15 días (<b>5%</b>)
+        </label>
+        </form>
+      <form action="" class="col mt-5 form-control needs-validation" id="form-direccion" novalidate>
+        <legend>Dirección de envío</legend>
+        
+        <label for="calle">Calle</label>
+        <input type="text" name="calle" id="calle" required>
+        <div class="invalid-feedback">
+          Este campo no debe estar vacío
+        </div>
+        <div class="valid-feedback">
+          ¡Es correcto!
+        </div>
+  
+        <label class="mb-3" for="numero">Número</label>
+        <input class="" type="text" name="numero" id="numero" required> 
+        <div class="invalid-feedback">
+          Este campo no debe estar vacío
+        </div>
+        <div class="valid-feedback">
+          ¡Es correcto!
+        </div>
+  
+        <label class="mb-3" for="esquina">Esquina</label>
+        <input type="text" name="esquina" id="esquina" required>
+        <div class="invalid-feedback">
+          Este campo no debe estar vacío
+        </div>
+        <div class="valid-feedback">
+          ¡Es correcto!
+        </div>
+        
+        <div class="row mt-5">
+          <h5>FORMA DE PAGO</h5>
+          <a class="" data-bs-toggle="modal" data-bs-target="#modalId">
+            Seleccionar forma de pago
+          </a>
+          <span>
+            metodo de pago seleccionado
+          </span>
+        </div>
+
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Forma de pago</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo-transferencia" value="tarjeta-credito" id="tarjeta-credito">
+                    <label class="form-check-label" for="tarjeta-credito">
+                      Tarjeta de crédito
+                    </label>
+                  </div>
+                  <hr>
+                  <div class="mb-3">
+                    <label for="numero-tarjeta" class="form-label">Número de tarjeta</label>
+                    <input type="number"
+                      class="form-control" name="" id="numero-tarjeta" aria-describedby="helpId" required>
+                      <div class="invalid-feedback">
+                        Este campo no debe estar vacío
+                      </div>
+                      <div class="valid-feedback">
+                        ¡Es correcto!
+                      </div>
+                    <label for="codigo-seg" class="form-label">Código de seguridad</label>
+                    <input type="text"
+                      class="form-control" name="" id="codigo-seg" aria-describedby="helpId" required maxlength="3" required>
+                      <div class="invalid-feedback">
+                        Este campo no debe estar vacío
+                      </div>
+                      <div class="valid-feedback">
+                        ¡Es correcto!
+                      </div>
+                    <label for="vencimiento" class="form-label">Fecha de vencimiento</label>
+                    <input type="text"
+                      class="form-control" name="" id="vencimiento" aria-describedby="helpId" placeholder="MM/AA"  required>
+                      <div class="invalid-feedback">
+                        Este campo no debe estar vacío
+                      </div>
+                      <div class="valid-feedback">
+                        ¡Es correcto!
+                      </div>
+                  </div>
+                  
+                  
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo-transferencia" id="transferencia-bancaria" value="transferencia-bancaria">
+                    <label class="form-check-label" for="transferencia-bancaria">
+                      Transferencia bancaria
+                    </label>
+                    <hr>
+                    <label for="cuenta-bancaria" class="form-label">Número de cuenta</label>
+                    <input type="text"
+                      class="form-control" name="transferencia-bancaria" id="cuenta-bancaria" aria-describedby="helpId" required>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit">Realizar compra</button>
+      </form>
+      <div class="row col-auto mt-5 d-flex justify-content-center">
+        <h3 class="text-center">Costos</h3>
+        <div class="row col-9 border">
+          <div class="col-6">
+            <h4>Subtotal</h4>
+            <p>Costo unitario del producto por cantidad</p>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <h4><span class="tipo-de-moneda"></span><span id="costo-subtotal"></span></h4>
+          </div>
+        </div>
+        <div class="row col-9 border ">
+          <div class="col-6">
+            <h4>Costo de envío</h4>
+            <p>Según el tipo de envío</p>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <h4 ><span class="tipo-de-moneda"></span><span id="costo-envío"></span></h4>
+          </div>
+        </div>
+        <div class="row col-9 border ">
+          <div class="col-6">
+            <h4>Total ($)</h4>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <h4 ><span class="tipo-de-moneda"></span><span id="costo-total"></span></h4>
+          </div>
+        </div>  
       </div>
+      <!-- Button trigger modal -->
+    
+      <!-- Modal -->
+      <form action="">
+
+       
+      </form>
+      
+     <!--  <script>
+        var modalId = document.getElementById('modalId');
+      
+        modalId.addEventListener('show.bs.modal', function (event) {
+            // Button that triggered the modal
+            let button = event.relatedTarget;
+            // Extract info from data-bs-* attributes
+            let recipient = button.getAttribute('data-bs-whatever');
+      
+          // Use above variables to manipulate the DOM
+        });
+      </script> -->
+      
     </div>
   </main>
   <footer class="text-muted">
